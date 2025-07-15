@@ -19,6 +19,14 @@
 //records the exact versions installed to avoid surprises when others install project.
 
 // key differences between===>
-// package.json                  package-locke.json
-//
+//                package.json                  
+//purpose---------> Declares what packages ur project needs.
+//Writtern by-----> npm when u install // uninstall
+//Shared----------> always commit to git
+//Editable--------> usually us
+//                package-lock.json
+//purpose---------> Records exactly which version were installed
+//writtern by-----> automatically by npm
+//shared----------> always commit to git
+//Editable--------> usually dont edit manually
 

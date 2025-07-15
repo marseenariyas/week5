@@ -1,3 +1,8 @@
+//what is Express?
+//express is a web application frame work of node.js
+//Express help you handle HTTP requests and response in a 
+// cleaner,faster & simpler way then writing raw node.js code
+
 const express=require('express')
 const app=express()
 
@@ -15,4 +20,6 @@ app.use((req,res)=>{
 })
 
 app.listen(3000,()=>console.log('server is running at http://localhost:3000'))
+
+
 
