@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mybtn">button click</button>
+    <p id="myPara"></p>
+
+
+    <script>
+        const mybtn=document.getElementById('mybtn')
+        const myPara=document.getElementById('myPara')
+
+        function fetchFunction (){
+           fetch('http://localhost:3000')
+           .then(res=>res.text())
+           .then(data=>{
+            document.getElementById('res').innerText=data;
+           })
+           .catch(error =>{
+            console.error('error',error);
+            document.getElementById('res').innerText='failed to fetch from Error'
+           });
+        }
+
+    </script>
+</body>
+</html>
