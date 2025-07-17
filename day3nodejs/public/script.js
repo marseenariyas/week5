@@ -1,0 +1,1 @@
+console.log('javascript loaded from static folder!!!!')

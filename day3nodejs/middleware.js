@@ -20,22 +20,51 @@
 
 const express=require('express')
 const app=express()
-const cors=require('cors')
 
-
-app.use(cors())
-
-app.use((req,res,next)=>{
-    console.log('middleware first working')
-    next();
+/*app.use((req,res,next)=>{
+    console.log('middileware 1 working..')
+    //res.send('all access here')
+    next()
 })
 
 app.use((req,res,next)=>{
-    console.log('middileware executed')
-    //next();
+    console.log('middileware 2 working..')
+    next()
 })
-
 app.get('/',(req,res)=>{
-    res.send('helloooo')
+    res.send('hellooo..')
 })
-app.listen(3002,()=>console.log('server runnung at http://localhost:3002'))
+
+app.listen(3001,()=>console.log('server running at http://localhost:3001')) */
+
+//const middilewarefn=((req,res,next)=>{
+//     console.log('middileware first working')
+//     next()
+// })
+// app.use(middilewarefn)
+
+// app.get('/',(req,res)=>{
+//      res.send('hai Everyone....')
+// })
+
+// app.listen(3002,()=>console.log('http://localhost:3002'))
+
+
+const middilewarefn=((req,res,next)=>{
+    console.log("middileware first working....")
+    next()
+})
+app.use((req,res,next)=>{
+    console.log('common middileware executing...')
+    next()
+})
+app.get('/',middilewarefn,(req,res)=>{
+    res.send('hai helloooo')
+})
+
+
+app.post('/ login',(req,res)=>{
+    res.send('welcome...')
+})
+
+app.listen(3001,()=>console.log('http:localhost:3000'))
